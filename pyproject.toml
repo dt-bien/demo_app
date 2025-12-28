@@ -1,19 +1,17 @@
-[project]
+[tool.poetry]
 name = "demo"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Do Tien Bien",email = "dotienbien93@gmail.com"}
-]
-readme = "README.md"
-requires-python = ">=3.11"
-dependencies = [
-    "fastapi (>=0.128.0,<0.129.0)",
-    "uvicorn[standard] (>=0.40.0,<0.41.0)"
-]
+authors = ["Do Tien Bien <dotienbien93@gmail.com>"]
+packages = [{include = "app"}]
 
-[tool.poetry]
-packages = [{include = "demo", from = "src"}]
+[tool.poetry.dependencies]
+python = ">=3.11"
+fastapi = ">=0.128.0,<0.129.0"
+uvicorn = {extras = ["standard"], version = ">=0.40.0,<0.41.0"}
+
+[tool.poetry.dev-dependencies]
+# nếu có dev dependencies, thêm ở đây
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
